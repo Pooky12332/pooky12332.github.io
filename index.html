@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+I am very aware of how messy this code is
+I wasnt able to find a better way of doing the blocks of text
+With the libary im using for the terminal, no other thing seemed to work
+If I can find something or just write a script to read a text file, this will get updated
+For now, enjoy the many, many template tags :)
+-->
+<html>
+<head>	
+
+	<title>Pooky</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+	<link href="main.css" rel="stylesheet" type="text/css"></link>
+
+</head>
+<body>
+
+	<!---->
+	<!--These are all the command blocks
+	I know, theres alot...-->
+	<template id="introDia">   ___            __       _    
+  / _ \___  ___  / /__    (_)__ 
+ / ___/ _ \/ _ \/  '_/   / / -_)
+/_/   \___/\___/_/\_\(_)/_/\__/
+
+Ver 1.0a - 01/11/22
+Type 'help' for a list of commands.
+	</template>
+	<template id="helpDia">commands.Main:
+	info - A little about me
+	social - Links to all of my social stuff
+	credits - The libarys and sources I used for this site
+	fun - List of more fun commands and debug commands
+
+commands.Projects:
+	coding - View my coding work and projects
+	games - View games I have made/worked on
+	pictures - View pictures I have taken
+	videos - View videos I have made/worked on
+	writing - View witings I have written
+	music - View music I have made/worked on
+
+commands.Other:
+	help - Displays this list of commands
+	clear - Clears all text off the screen
+	</template>
+	<template id="infoDia">My name is Ewan Clarke, otherwise known as Pooky
+
+I am a student, working towards becoming a developer of some kind
+I mostly code in C++ and Python, but know many other languages
+Also spending time making things and exporing my intrests
+
+This website is a collection of all my work of any kind
+From coding work, to video, to music, ect..
+So stick around and see what there is to see!
+	</template>
+	<template id="funDia">All of these commands are mostly just for testing
+But a few of them are just for fun
+Try running some and see what happens
+Run these as arguments, e.g 'fun --cat'
+
+commands.Fun.Args:
+	--cat - A test image of a cat
+	--nicew - Gives you some words of encouragement
+	</template>
+
+	<script>
+		$('body').terminal({
+    	help: function() {
+    		this.echo(helpDia.innerHTML);
+    	},
+    	info: function() {
+    		this.echo(infoDia.innerHTML);
+    	},
+    	social: function() {
+    		this.echo('Here are all of my social media');
+    		this.echo('Best way to contact me is to message me on one of these:');
+    		this.echo('[[!;;;;https://www.youtube.com/channel/UCFIPFOkm5oHPcIQiVGLHCSA]YouTube]');
+    		this.echo('[[!;;;;https://twitter.com/Pooky1233]Twitter]');
+    		this.echo('[[!;;;;https://www.instagram.com/pooky1269/]Instagram]');
+    		this.echo('[[!;;;;https://www.twitch.tv/pooky1233]Twitch]');
+    		this.echo('[[!;;;;https://steamcommunity.com/profiles/76561198354854665/]Steam]');
+    		this.echo('[[!;;;;https://open.spotify.com/user/saty1vy5b13qa7dmm3ow1fmk3?si=475487d2be904b93]Spotify]');
+    		this.echo('[[!;;;;https://github.com/Pooky12332]Github]\n');
+    	},
+    	credits: function() {
+    		this.echo('Primary library I used to make this site:');
+    		this.echo('[[!;;;;https://github.com/jcubic/jquery.terminal]https://github.com/jcubic/jquery.terminal]\n');
+    	},
+    	fun: function(arg) {
+    		if (arg != undefined) {
+	    		switch (arg) {
+	    			case '--cat':
+	    				const img = $('<img src="https://placekitten.com/200/300">');
+	    				this.echo(img);
+	    				break;
+	    			case '--nicew':
+	    				num = Math.floor(Math.random() * 8);
+	    				switch (num) {
+	    					case 0:
+	    						this.echo('At least your not dead!\n');
+	    						break;
+	    					case 1:
+	    						this.echo('I hope you have a nice day!\n');
+	    						break;
+	    					case 2:
+	    						this.echo('Keep going, I know you can!\n');
+	    						break;
+	    					case 3:
+	    						this.echo('You look great today\n');
+	    						break;
+	    					case 4:
+	    						this.echo('Hope your doing awesome today!\n');
+	    						break;
+	    					case 5:
+	    						this.echo('You got this, dont worry!\n');
+	    						break;
+	    					case 6:
+	    						this.echo('Goodevening, goodmorning and goodnight!\n');
+	    						break;
+	    					case 7:
+	    						this.echo('Believe in yourself!\n');
+	    						break;
+	    				}
+	    				break;
+	    			default:
+	    				this.error('Invalid arg used!\n');
+	    				break;
+	    		}
+	    	} else {
+	    		this.echo(funDia.innerHTML)
+	    	}
+    	},
+    	coding: function() {
+    		// Needs to be made when the site is being put online
+    		this.echo('Some of my coding work can be found here:');
+    		this.echo('[[!;;;;https://github.com/Pooky12332]https://github.com/Pooky12332]\n');
+    	},
+    	games: function() {
+    		// Upload HTML games to diffrent pages, can talk about
+    		this.echo('Most of my games can be found here:');
+    		this.echo('[[!;;;;https://gamejolt.com/games/diein/505164]https://gamejolt.com/games/diein/505164]\n');
+    	},
+    	pictures: function() {
+    		// Page needs to be made to display pictures
+    		this.echo('This is a placeholder\n');
+    	},
+    	videos: function() {
+    		this.echo('My videos can be found here:');
+    		this.echo('[[!;;;;https://gamejolt.com/games/diein/505164]https://gamejolt.com/games/diein/505164]\n');
+    	},
+    	writings: function() {
+    		// Still in the air if I want to upload these or not, will do on seprate page
+    		this.echo('This is a placeholder\n');
+    	},
+    	music: function() {
+    		// Could link band camp and talk about album
+    		this.echo('This is a placeholder\n');
+    	}
+		}, {
+			checkArity: false,
+    	greetings: introDia.innerHTML
+		});
+	</script>
+
+</body>
+</html>
