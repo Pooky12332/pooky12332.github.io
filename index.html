@@ -27,9 +27,8 @@ For now, enjoy the many, many template tags :)
  / ___/ _ \/ _ \/  '_/   / / -_)
 /_/   \___/\___/_/\_\(_)/_/\__/
 
-Ver 1.1a - 01/11/22
+Ver 1.2a - 01/11/22
 Type 'help' for a list of commands.
-
 	</template>
 	<template id="helpDia">commands.Main:
 	info - A little about me
@@ -40,7 +39,6 @@ Type 'help' for a list of commands.
 commands.Projects:
 	coding - View my coding work and projects
 	games - View games I have made/worked on
-	pictures - View pictures I have taken
 	videos - View videos I have made/worked on
 	music - View music I have made/worked on
 
@@ -48,6 +46,8 @@ commands.Other:
 	help - Displays this list of commands
 	clear - Clears all text off the screen
 	python - Opens a Python 3 interpreter and compiler
+	txtcol - Change the colour of the terminal text
+	bkgcol - Chnage the colour of the terminal background
 	</template>
 	<template id="infoDia">My name is Ewan Clarke, also known as Pooky
 
@@ -64,9 +64,11 @@ But a few of them are just for fun
 Try running some and see what happens
 Run these as arguments, e.g 'fun --cat'
 
-commands.Fun.Args:
+commands.fun.Args:
 	--cat - A test image of a cat
 	--nicew - Gives you some words of encouragement
+	--colour - Run the coloured text test
+	--embedvid - Runs the embed video test
 	</template>
 
 	<!--This links the main.js script to the html file

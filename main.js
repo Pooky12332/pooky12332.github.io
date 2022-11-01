@@ -56,6 +56,15 @@ $('body').terminal({
   						break;
   				}
   				break;
+  			case '--colour':
+  				this.echo('[[;red;]I am red!]')
+  				this.echo('[[;green;]I am green!]')
+  				this.echo('[[;blue;]I am blue!]\n')
+  				break;
+  			case '--embedvid':
+  				const box = $('<iframe width="560" height="315" src="https://www.youtube.com/embed/O58N8Mmv0QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+  				this.echo(box);
+  				break;
   			default:
   				this.error('Invalid arg used!\n');
   				break;
@@ -65,18 +74,12 @@ $('body').terminal({
   	}
 	},
 	coding: function() {
-		// Needs to be made when the site is being put online
 		this.echo('Some of my coding work can be found here:');
 		this.echo('[[!;;;;https://github.com/Pooky12332]https://github.com/Pooky12332]\n');
 	},
 	games: function() {
-		// Upload HTML games to diffrent pages, can talk about
 		this.echo('Most of my games can be found here:');
 		this.echo('[[!;;;;https://gamejolt.com/games/diein/505164]https://gamejolt.com/games/diein/505164]\n');
-	},
-	pictures: function() {
-		// Page needs to be made to display pictures
-		this.echo('This is a placeholder\n');
 	},
 	videos: function() {
 		this.echo('Right now, im working on a large scale video\nSo for now, my channel is blank\nOnce its finished, you can view it here or on my channel\nMy channel can be found here:');
@@ -84,12 +87,55 @@ $('body').terminal({
 	},
 	music: function() {
 		const box = $('<iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=2787304646/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/" seamless><a href="https://pooky1233.bandcamp.com/album/open-water">Open Water by Pooky</a></iframe>')
-		this.echo('This is my album, its mostly lofi music that I made\nIt was made over a week and I loved making it\n')
+		this.echo('This is my album, its mostly lofi music that I made\nIt was made over a week\nGive it a listen below\n')
 		this.echo(box);
 	},
 	python: function(){
 		const box = $('<iframe src="https://trinket.io/embed/python3/7c6e42960a" width="1000" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>');
 		this.echo(box);
+	},
+	txtcol: function(arg1, arg2){
+		var r = document.querySelector('.terminal');
+
+		if (arg1 != undefined) {
+			switch (arg1) {
+				case '--get':
+					var rs = getComputedStyle(r);
+					this.echo('Currently the text is' + rs.getPropertyValue('--color') + '\n');
+					break;
+				case '--set':
+					r.style.setProperty('--color', arg2);
+					break;
+				default:
+					this.error('Invalid arg used!\n');
+					break;
+			}
+		} else {
+			this.echo('--get - Gets the current colour of text\n--set - Sets a new colour of text\n')
+		}
+	},
+	bkgcol: function(arg1, arg2){
+		var r = document.querySelector('.terminal');
+
+		if (arg1 != undefined) {
+			switch (arg1) {
+				case '--get':
+					var rs = getComputedStyle(r);
+					this.echo('Currently the text is' + rs.getPropertyValue('--background') + '\n');
+					break;
+				case '--set':
+					r.style.setProperty('--background', arg2);
+					break;
+				default:
+					this.error('Invalid arg used!\n');
+					break;
+			}
+		} else {
+			this.echo('--get - Gets the current colour of the background\n--set - Sets a new colour of the background\n')
+		}
+	},
+	reboot: function(){
+		location.reload();
 	}
 }, {
 	checkArity: false,

@@ -1,3 +1,7 @@
 :root {
-	--size:  1.0;
+	--size: 1.0;
+}
+.terminal {
+	--color: lightgray;
+	--background: black;
 }
