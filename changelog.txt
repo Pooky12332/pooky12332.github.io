@@ -19,3 +19,17 @@ Ver 1.2a - 01/11/22
 	- Added 'embedvid' argument to 'fun'
 
 Ver 1.3a - 02/11/22
+	- Fixed dialog issues
+	- Edited the greeting text to include a warning for mobile users
+	- Edited some comments for easier reading
+	- Edited the dialog of 'credits'
+	- Added 'theme' command for changing to select themes
+	- Added 'exit' to close the page
+	- Added 'changelog.txt' to view version list easier
+	- Added tabicon
+	- Added '--animtest' argument to 'fun'
+	- Added '-p' argument to 'fun'
+	- Added comments to 'main.js' for easier reading
+	- Changed the title of the tab from 'Pooky' to 'Pook.ie'
+	- Changed the '--nicew' argument for 'fun' to '--nw'
+	- Changed the order of commands in code for better reading
