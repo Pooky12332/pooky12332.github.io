@@ -1,0 +1,21 @@
+Ver 1.1a - 01/11/22
+	- Fixed mobile view
+	- Fixed size of text on both platforms
+	- Fixed dialog issues
+	- Edited some dialog
+	- Moved the JS code to a different file
+	- Moved the CSS code to a different file
+	- Added Python IDE
+	- Added music embed
+	- Removed 'writing' command
+
+Ver 1.2a - 01/11/22
+	- Fixed greeting message formatting
+	- Fixed hyperlinks on mobile
+	- Added 'txtcol' to change the text colour
+	- Added 'bkgcol' to change the background colour
+	- Added 'reboot' to relaod the page
+	- Added 'colour' argument to 'fun'
+	- Added 'embedvid' argument to 'fun'
+
+Ver 1.3a - 02/11/22

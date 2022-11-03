@@ -5,11 +5,17 @@ I wasnt able to find a better way of doing the blocks of text
 With the libary im using for the terminal, no other thing seemed to work
 If I can find something or just write a script to read a text file, this will get updated
 For now, enjoy the many, many template tags :)
+
+Current known bugs:
+- Mobile cant use '-' and sometimes 'i'
+- Mobile has some scrolling issues
+- Mobile has flickering issues when scrolling down
 -->
 <html>
 <head>	
 
-	<title>Pooky</title>
+	<title>Pook.ie</title>
+	<link href="tabicon.png" rel="icon" type="image/png"></link>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/combine/npm/terminal-prism/css/prism-coy.css,npm/jquery.terminal/css/jquery.terminal.min.css,npm/jquery.splitter/css/jquery.splitter.css" rel="stylesheet">
@@ -19,21 +25,27 @@ For now, enjoy the many, many template tags :)
 </head>
 <body>
 
-	<!---->
-	<!--These are all the command blocks
-	I know, theres alot...-->
+	<!--
+	These are all the text blocks
+	I know, theres alot...
+	-->
 	<template id="introDia">   ___            __       _    
   / _ \___  ___  / /__    (_)__ 
  / ___/ _ \/ _ \/  '_/   / / -_)
 /_/   \___/\___/_/\_\(_)/_/\__/
 
-Ver 1.2a - 01/11/22
+Ver 1.3a - 01/11/22
 Type 'help' for a list of commands.
+
+[[;#A00;]This site is still in alpha and has some bugs!]
+[[;#A00;]If your on mobile, You wont be able to use arguments,]
+[[;#A00;]and please use 'clear' after every command!]
+Sorry for the inconvenience!
 	</template>
 	<template id="helpDia">commands.Main:
 	info - A little about me
 	social - Links to all of my social stuff
-	credits - The libarys and sources I used for this site
+	credits - The libraries and sources I used for this site
 	fun - List of more fun commands and debug commands
 
 commands.Projects:
@@ -45,15 +57,18 @@ commands.Projects:
 commands.Other:
 	help - Displays this list of commands
 	clear - Clears all text off the screen
+	reboot - Reloads the terminal and page
+	exit - Close the terminal and page
 	python - Opens a Python 3 interpreter and compiler
+	theme - Lets you change the theme of the terminal
 	txtcol - Change the colour of the terminal text
-	bkgcol - Chnage the colour of the terminal background
+	bkgcol - Change the colour of the terminal background
 	</template>
 	<template id="infoDia">My name is Ewan Clarke, also known as Pooky
 
 I am a student, working towards becoming a developer of some kind
 I mostly code in C++ and Python, but know many other languages
-Also spending time making things and exploring my intrests
+Also spending time making things and exploring my interests
 
 This website is a collection of all my work of any kind
 From coding work, to video, to music, ect
@@ -65,14 +80,27 @@ Try running some and see what happens
 Run these as arguments, e.g 'fun --cat'
 
 commands.fun.Args:
+	-p - Displays a ASCII 'p' for the tabicon
 	--cat - A test image of a cat
-	--nicew - Gives you some words of encouragement
+	--nw - Gives you some words of encouragement
 	--colour - Run the coloured text test
 	--embedvid - Runs the embed video test
 	</template>
+	<template id="pDia">This was used for the tabicon
+I just left it here for fun :)
 
-	<!--This links the main.js script to the html file
-		All of the actual intresting code can be found there-->
+	   ___ 
+	  / _ \
+	 / ___/
+	/_/
+
+
+	</template>
+
+	<!--
+	This links the main.js script to the html file
+	All of the actual intresting code can be found there
+	-->
 	<script src="main.js"></script>
 
 </body>

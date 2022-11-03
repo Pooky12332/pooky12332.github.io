@@ -1,4 +1,5 @@
 $('body').terminal({
+// Main commands
 	help: function() {
 		this.echo(helpDia.innerHTML);
 	},
@@ -18,16 +19,21 @@ $('body').terminal({
 	},
 	credits: function() {
 		this.echo('Primary library I used to make this site:');
-		this.echo('[[!;;;;https://github.com/jcubic/jquery.terminal]https://github.com/jcubic/jquery.terminal]\n');
+		this.echo('[[!;;;;https://github.com/jcubic/jquery.terminal]https://github.com/jcubic/jquery.terminal]');
+		this.echo('The site I used for the cat picture:')
+		this.echo('[[!;;;;https://placekitten.com/]https://placekitten.com/]\n');
 	},
 	fun: function(arg) {
 		if (arg != undefined) {
   		switch (arg) {
+  			case '-p':
+  				this.echo(pDia.innerHTML)
+  				break;
   			case '--cat':
   				const img = $('<img src="https://placekitten.com/200/300">');
   				this.echo(img);
   				break;
-  			case '--nicew':
+  			case '--nw':
   				num = Math.floor(Math.random() * 8);
   				switch (num) {
   					case 0:
@@ -65,6 +71,9 @@ $('body').terminal({
   				const box = $('<iframe width="560" height="315" src="https://www.youtube.com/embed/O58N8Mmv0QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
   				this.echo(box);
   				break;
+  			case '--animtest':
+					this.echo('This is the typing animation test!\nThis is here so I can test if this animation works on other platforms\nIf you encounter a glitch with this animation\nI am probably aware of it and have it on my bug list\nSee ya!\n', { typing: true, delay: 100 });
+  				break;
   			default:
   				this.error('Invalid arg used!\n');
   				break;
@@ -73,6 +82,8 @@ $('body').terminal({
   		this.echo(funDia.innerHTML)
   	}
 	},
+
+// Project commands
 	coding: function() {
 		this.echo('Some of my coding work can be found here:');
 		this.echo('[[!;;;;https://github.com/Pooky12332]https://github.com/Pooky12332]\n');
@@ -90,9 +101,40 @@ $('body').terminal({
 		this.echo('This is my album, its mostly lofi music that I made\nIt was made over a week\nGive it a listen below\n')
 		this.echo(box);
 	},
+
+// Other commands
+	reboot: function(){
+		location.reload();
+	},
+	exit: function(){
+		window.close();
+	},
 	python: function(){
 		const box = $('<iframe src="https://trinket.io/embed/python3/7c6e42960a" width="1000" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>');
 		this.echo(box);
+	},
+	theme: function(arg){
+		var r = document.querySelector('.terminal');
+
+		if (arg != undefined){
+			switch (arg) {
+				case '--light':
+					r.style.setProperty('--color', 'black');
+					r.style.setProperty('--background', 'white');
+					this.echo('Theme changed to: light');
+					break;
+				case '--dark':
+					r.style.setProperty('--color', 'lightgray');
+					r.style.setProperty('--background', 'black');
+					this.echo('Theme changed to: dark');
+					break;
+				default:
+					this.error('Invalid arg used!\n');
+					break;
+			}
+		} else {
+			this.echo('--light - Change to the light theme\n--dark - Change to the dark theme (defualt)\n');
+		}
 	},
 	txtcol: function(arg1, arg2){
 		var r = document.querySelector('.terminal');
@@ -121,6 +163,7 @@ $('body').terminal({
 			switch (arg1) {
 				case '--get':
 					var rs = getComputedStyle(r);
+
 					this.echo('Currently the text is' + rs.getPropertyValue('--background') + '\n');
 					break;
 				case '--set':
@@ -133,9 +176,6 @@ $('body').terminal({
 		} else {
 			this.echo('--get - Gets the current colour of the background\n--set - Sets a new colour of the background\n')
 		}
-	},
-	reboot: function(){
-		location.reload();
 	}
 }, {
 	checkArity: false,
