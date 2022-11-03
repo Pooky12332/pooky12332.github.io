@@ -33,3 +33,18 @@ Ver 1.3a - 02/11/22
 	- Changed the title of the tab from 'Pooky' to 'Pook.ie'
 	- Changed the '--nicew' argument for 'fun' to '--nw'
 	- Changed the order of commands in code for better reading
+
+Ver 1.4a - 03/11/22
+	- Fixed formating issues
+	- Fixed dating issues
+	- Edited greeting and warning text
+	- Added animated intro to site when loaded
+	- Added first round of daily splashes
+	- Added link colour changing to '-l' and '-d' in 'theme'
+	- Added '--cat2' argument to 'fun'
+	- Added comments to 'main.js' for easier reading
+	- Removed '--nw' argument from 'fun'
+	- Removed '-p' argument from 'fun'
+	- Moved 'fun' from main to other in help section but not in the code
+	- Changed arguments for 'theme', 'txtcol' and 'bkgcol' to shortened versions
+	- Changed the colour of links to fit the colour scheme

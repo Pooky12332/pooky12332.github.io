@@ -33,34 +33,9 @@ $('body').terminal({
   				const img = $('<img src="https://placekitten.com/200/300">');
   				this.echo(img);
   				break;
-  			case '--nw':
-  				num = Math.floor(Math.random() * 8);
-  				switch (num) {
-  					case 0:
-  						this.echo('At least your not dead!\n');
-  						break;
-  					case 1:
-  						this.echo('I hope you have a nice day!\n');
-  						break;
-  					case 2:
-  						this.echo('Keep going, I know you can!\n');
-  						break;
-  					case 3:
-  						this.echo('You look great today\n');
-  						break;
-  					case 4:
-  						this.echo('Hope your doing awesome today!\n');
-  						break;
-  					case 5:
-  						this.echo('You got this, dont worry!\n');
-  						break;
-  					case 6:
-  						this.echo('Goodevening, goodmorning and goodnight!\n');
-  						break;
-  					case 7:
-  						this.echo('Believe in yourself!\n');
-  						break;
-  				}
+  			case '--cat2':
+  				const img2 = $('<img src="https://placekitten.com/g/200/300">');
+  				this.echo(img2);
   				break;
   			case '--colour':
   				this.echo('[[;red;]I am red!]')
@@ -118,22 +93,24 @@ $('body').terminal({
 
 		if (arg != undefined){
 			switch (arg) {
-				case '--light':
+				case '-l':
 					r.style.setProperty('--color', 'black');
 					r.style.setProperty('--background', 'white');
-					this.echo('Theme changed to: light');
+					r.style.setProperty('--link-color', 'black');
+					this.echo('Theme changed to: light\n');
 					break;
-				case '--dark':
+				case '-d':
 					r.style.setProperty('--color', 'lightgray');
 					r.style.setProperty('--background', 'black');
-					this.echo('Theme changed to: dark');
+					r.style.setProperty('--link-color', 'lightgray');
+					this.echo('Theme changed to: dark\n');
 					break;
 				default:
 					this.error('Invalid arg used!\n');
 					break;
 			}
 		} else {
-			this.echo('--light - Change to the light theme\n--dark - Change to the dark theme (defualt)\n');
+			this.echo('-l - Change to the light theme\n-d - Change to the dark theme (defualt)\n');
 		}
 	},
 	txtcol: function(arg1, arg2){
@@ -141,11 +118,11 @@ $('body').terminal({
 
 		if (arg1 != undefined) {
 			switch (arg1) {
-				case '--get':
+				case '-g':
 					var rs = getComputedStyle(r);
-					this.echo('Currently the text is' + rs.getPropertyValue('--color') + '\n');
+					this.echo('Currently the text is ' + rs.getPropertyValue('--color') + '\n');
 					break;
-				case '--set':
+				case '-s':
 					r.style.setProperty('--color', arg2);
 					break;
 				default:
@@ -153,7 +130,7 @@ $('body').terminal({
 					break;
 			}
 		} else {
-			this.echo('--get - Gets the current colour of text\n--set - Sets a new colour of text\n')
+			this.echo('-g - Gets the current colour of text\n-s - Sets a new colour of text\n')
 		}
 	},
 	bkgcol: function(arg1, arg2){
@@ -161,12 +138,12 @@ $('body').terminal({
 
 		if (arg1 != undefined) {
 			switch (arg1) {
-				case '--get':
+				case '-g':
 					var rs = getComputedStyle(r);
 
-					this.echo('Currently the text is' + rs.getPropertyValue('--background') + '\n');
+					this.echo('Currently the text is ' + rs.getPropertyValue('--background') + '\n');
 					break;
-				case '--set':
+				case '-s':
 					r.style.setProperty('--background', arg2);
 					break;
 				default:
@@ -174,10 +151,33 @@ $('body').terminal({
 					break;
 			}
 		} else {
-			this.echo('--get - Gets the current colour of the background\n--set - Sets a new colour of the background\n')
+			this.echo('-g - Gets the current colour of the background\n-s - Sets a new colour of the background\n')
 		}
-	}
+	},
 }, {
+
+// Flags and initialization
+	onInit() {
+		const sequence = ['Hello, Welcome to my site!', 'My name is Ewan Clarke, I also go by Pooky', 'Type \'help\' for a list of all commands', 'Type \'info\' to learn more about me', ' '];
+		const term = this;
+
+		const splashList = ['', 'It\'s the first of the month!', 'Follow the train, CJ!', 'Better then UNIX!', 'More addictive then Factorio!', 'More then 200 lines of code!', 'Stuck in alpha!', 'Keyboard compatible!', 'Now in 3D!', '20 GOTO 10', 'That last splash was basic!', 'Sublime!', 'As seen on tv!', 'Mobile is still broken!', 'Now your thinking with portals!', 'No stolen code here!', 'Rise and shine, Mister Freeman!', 'Contains cats!', 'Killing goombas since 1983!', 'Cookie free!', 'Waterproof!', 'One of a kind!', 'Now With Multiplayer!', 'Lookin\' out for you, like I always do!', 'Bulletproof!', 'One of your five a day!', '/give @a tnt 64', 'Now in colour!', 'Do a barrel roll!', '4 u, <3!', 'I\'m feeling lucky!', 'See you next month!'];
+		var date = new Date();
+		var month = date.getMonth()
+
+		term.pause(true);
+		(function loop() {
+			term.echo(sequence.shift(), {typing: true, delay: 45});
+			if (sequence.length) {
+				setTimeout(loop, 2400);
+			} else {
+				term.resume();
+				term.echo('\n' + splashList[date.getDate()])
+				term.echo("\n[[;#A00;]This site is still in alpha and has some bugs!]\n[[;#A00;]If your on mobile, You wont be able to use arguments,]\n[[;#A00;]and please use 'clear' after every command!]");
+			};
+		})();
+	},
+
 	checkArity: false,
 	greetings: introDia.innerHTML
 });
