@@ -1,3 +1,6 @@
+var argIndi = '-';
+var argIndiLong = '--';
+
 $('body').terminal({
 // Main commands
 	help: function() {
@@ -23,34 +26,42 @@ $('body').terminal({
 		this.echo('The site I used for the cat picture:')
 		this.echo('[[!;;;;https://placekitten.com/]https://placekitten.com/]\n');
 	},
+	argc: function(){
+		if (argIndi == '-') {
+			argIndi = '+';
+			argIndiLong = '++';
+			this.echo('Argument Indicator is now set to \'+\'\n');
+		} else {
+			argIndi = '-';
+			argIndiLong = '--';
+			this.echo('Argument Indicator is now set to \'-\'\n');
+		}
+	},
 	fun: function(arg) {
 		if (arg != undefined) {
   		switch (arg) {
-  			case '-p':
-  				this.echo(pDia.innerHTML)
-  				break;
-  			case '--cat':
+  			case argIndiLong + 'cat':
   				const img = $('<img src="https://placekitten.com/200/300">');
   				this.echo(img);
   				break;
-  			case '--cat2':
+  			case argIndiLong + 'cat2':
   				const img2 = $('<img src="https://placekitten.com/g/200/300">');
   				this.echo(img2);
   				break;
-  			case '--colour':
+  			case argIndiLong + 'colour':
   				this.echo('[[;red;]I am red!]')
   				this.echo('[[;green;]I am green!]')
   				this.echo('[[;blue;]I am blue!]\n')
   				break;
-  			case '--embedvid':
+  			case argIndiLong + 'embedvid':
   				const box = $('<iframe width="560" height="315" src="https://www.youtube.com/embed/O58N8Mmv0QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
   				this.echo(box);
   				break;
-  			case '--animtest':
+  			case argIndiLong + 'animtest':
 					this.echo('This is the typing animation test!\nThis is here so I can test if this animation works on other platforms\nIf you encounter a glitch with this animation\nI am probably aware of it and have it on my bug list\nSee ya!\n', { typing: true, delay: 100 });
   				break;
   			default:
-  				this.error('Invalid arg used!\n');
+  				this.error('Invalid arg used!');
   				break;
   		}
   	} else {
@@ -84,6 +95,10 @@ $('body').terminal({
 	exit: function(){
 		window.close();
 	},
+	date: function(){
+		const dt = new Date();
+		this.echo('The current date and time is: ' + dt + '\n')
+	},
 	python: function(){
 		const box = $('<iframe src="https://trinket.io/embed/python3/7c6e42960a" width="1000" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>');
 		this.echo(box);
@@ -93,20 +108,20 @@ $('body').terminal({
 
 		if (arg != undefined){
 			switch (arg) {
-				case '-l':
+				case argIndi + 'l':
 					r.style.setProperty('--color', 'black');
 					r.style.setProperty('--background', 'white');
 					r.style.setProperty('--link-color', 'black');
 					this.echo('Theme changed to: light\n');
 					break;
-				case '-d':
+				case argIndi + 'd':
 					r.style.setProperty('--color', 'lightgray');
 					r.style.setProperty('--background', 'black');
 					r.style.setProperty('--link-color', 'lightgray');
 					this.echo('Theme changed to: dark\n');
 					break;
 				default:
-					this.error('Invalid arg used!\n');
+					this.error('Invalid arg used!');
 					break;
 			}
 		} else {
@@ -118,15 +133,15 @@ $('body').terminal({
 
 		if (arg1 != undefined) {
 			switch (arg1) {
-				case '-g':
+				case argIndi + 'g':
 					var rs = getComputedStyle(r);
 					this.echo('Currently the text is ' + rs.getPropertyValue('--color') + '\n');
 					break;
-				case '-s':
+				case argIndi + 's':
 					r.style.setProperty('--color', arg2);
 					break;
 				default:
-					this.error('Invalid arg used!\n');
+					this.error('Invalid arg used!');
 					break;
 			}
 		} else {
@@ -138,16 +153,16 @@ $('body').terminal({
 
 		if (arg1 != undefined) {
 			switch (arg1) {
-				case '-g':
+				case argIndi + 'g':
 					var rs = getComputedStyle(r);
 
 					this.echo('Currently the text is ' + rs.getPropertyValue('--background') + '\n');
 					break;
-				case '-s':
+				case argIndi + 's':
 					r.style.setProperty('--background', arg2);
 					break;
 				default:
-					this.error('Invalid arg used!\n');
+					this.error('Invalid arg used!');
 					break;
 			}
 		} else {
@@ -158,7 +173,7 @@ $('body').terminal({
 
 // Flags and initialization
 	onInit() {
-		const sequence = ['Hello, Welcome to my site!', 'My name is Ewan Clarke, I also go by Pooky', 'Type \'help\' for a list of all commands', 'Type \'info\' to learn more about me', ' '];
+		const sequence = ['Hello, Welcome to my site!', 'My name is Ewan Clarke, I also go by Pooky', 'I like to make and code things', 'Type \'help\' for a list of all commands', 'Type \'info\' to learn more about me', ' '];
 		const term = this;
 
 		const splashList = ['', 'It\'s the first of the month!', 'Follow the train, CJ!', 'Better then UNIX!', 'More addictive then Factorio!', 'More then 200 lines of code!', 'Stuck in alpha!', 'Keyboard compatible!', 'Now in 3D!', '20 GOTO 10', 'That last splash was basic!', 'Sublime!', 'As seen on tv!', 'Mobile is still broken!', 'Now your thinking with portals!', 'No stolen code here!', 'Rise and shine, Mister Freeman!', 'Contains cats!', 'Killing goombas since 1983!', 'Cookie free!', 'Waterproof!', 'One of a kind!', 'Now With Multiplayer!', 'Lookin\' out for you, like I always do!', 'Bulletproof!', 'One of your five a day!', '/give @a tnt 64', 'Now in colour!', 'Do a barrel roll!', '4 u, <3!', 'I\'m feeling lucky!', 'See you next month!'];
@@ -167,13 +182,13 @@ $('body').terminal({
 
 		term.pause(true);
 		(function loop() {
-			term.echo(sequence.shift(), {typing: true, delay: 45});
+			term.echo(sequence.shift(), {typing: true, delay: 40});
 			if (sequence.length) {
-				setTimeout(loop, 2400);
+				setTimeout(loop, 2500);
 			} else {
 				term.resume();
 				term.echo('\n' + splashList[date.getDate()])
-				term.echo("\n[[;#A00;]This site is still in alpha and has some bugs!]\n[[;#A00;]If your on mobile, You wont be able to use arguments,]\n[[;#A00;]and please use 'clear' after every command!]");
+				term.echo("\n[[i;#ff0000;]This site is still in alpha and has some bugs!]\n[[i;#ff0000;]If your on mobile, Type 'argc' to use args,]\n[[i;#ff0000;]and please use 'clear' after every command!]");
 			};
 		})();
 	},

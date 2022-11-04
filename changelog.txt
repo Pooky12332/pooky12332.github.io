@@ -48,3 +48,14 @@ Ver 1.4a - 03/11/22
 	- Moved 'fun' from main to other in help section but not in the code
 	- Changed arguments for 'theme', 'txtcol' and 'bkgcol' to shortened versions
 	- Changed the colour of links to fit the colour scheme
+
+Ver 1.5a - 04/11/22
+	- Fixed formating issues
+	- Fixed intro text animation on mobile
+	- Edited some digalogs to include new commands
+	- Edited warning colour and text
+	- Edited all commands to accept '+' or '++' once changed
+	- Added new line to intro
+	- Added 'date' to display the current date and time
+	- Added 'argc' to change the arg indicator from '-' to '+'
+	- Removed code from unused or removed commands
