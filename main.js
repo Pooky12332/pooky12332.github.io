@@ -40,6 +40,19 @@ $('body').terminal({
 	fun: function(arg) {
 		if (arg != undefined) {
   		switch (arg) {
+  			case argIndi + 'fb':
+  				for (let i = 1; i < 101; i++) {
+  					if (i % 15 == 0) {
+  						this.echo('[[i;#ebc000;]FizzBuzz]');
+  					} else if (i % 3 == 0) {
+  						this.echo('[[i;#ebc000;]Fizz]');
+  					} else if (i % 5 == 0) {
+  						this.echo('[[i;#ebc000;]Buzz]');
+  					} else {
+  						this.echo(i)
+  					}
+  				}
+  				break;
   			case argIndiLong + 'cat':
   				const img = $('<img src="https://placekitten.com/200/300">');
   				this.echo(img);
@@ -87,8 +100,15 @@ $('body').terminal({
 		this.echo('This is my album, its mostly lofi music that I made\nIt was made over a week\nGive it a listen below\n')
 		this.echo(box);
 	},
+	pictures: function() {
+		const imgSet1 = $('<img src="media/img1.jpg"><img src="media/img2.jpg"><img src="media/img3.jpg">');
+		const imgSet2 = $('<img src="media/img4.jpg"><img src="media/img5.jpg"><img src="media/img6.jpg">');
+		this.echo(imgSet1);
+		this.echo(imgSet2);
+		this.echo('Last updated: 06/11/22\n');
+	},
 
-// Other commands
+// System commands
 	reboot: function(){
 		location.reload();
 	},
@@ -97,8 +117,13 @@ $('body').terminal({
 	},
 	date: function(){
 		const dt = new Date();
-		this.echo('The current date and time is: ' + dt + '\n')
+		this.echo('The current date and time is: ' + dt + '\n');
 	},
+	echo: function(arg){
+		this.echo(arg);
+	},
+
+// Other commands
 	python: function(){
 		const box = $('<iframe src="https://trinket.io/embed/python3/7c6e42960a" width="1000" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>');
 		this.echo(box);
@@ -112,12 +137,14 @@ $('body').terminal({
 					r.style.setProperty('--color', 'black');
 					r.style.setProperty('--background', 'white');
 					r.style.setProperty('--link-color', 'black');
+					document.cookie = 'theme=l';
 					this.echo('Theme changed to: light\n');
 					break;
 				case argIndi + 'd':
 					r.style.setProperty('--color', 'lightgray');
 					r.style.setProperty('--background', 'black');
 					r.style.setProperty('--link-color', 'lightgray');
+					document.cookie = 'theme=';
 					this.echo('Theme changed to: dark\n');
 					break;
 				default:
@@ -128,7 +155,7 @@ $('body').terminal({
 			this.echo('-l - Change to the light theme\n-d - Change to the dark theme (defualt)\n');
 		}
 	},
-	txtcol: function(arg1, arg2){
+	tcol: function(arg1, arg2){
 		var r = document.querySelector('.terminal');
 
 		if (arg1 != undefined) {
@@ -148,7 +175,7 @@ $('body').terminal({
 			this.echo('-g - Gets the current colour of text\n-s - Sets a new colour of text\n')
 		}
 	},
-	bkgcol: function(arg1, arg2){
+	bcol: function(arg1, arg2){
 		var r = document.querySelector('.terminal');
 
 		if (arg1 != undefined) {
@@ -180,6 +207,8 @@ $('body').terminal({
 		var date = new Date();
 		var month = date.getMonth()
 
+		var r = document.querySelector('.terminal');
+
 		term.pause(true);
 		(function loop() {
 			term.echo(sequence.shift(), {typing: true, delay: 40});
@@ -191,6 +220,12 @@ $('body').terminal({
 				term.echo("\n[[i;#ff0000;]This site is still in alpha and has some bugs!]\n[[i;#ff0000;]If your on mobile, Type 'argc' to use args,]\n[[i;#ff0000;]and please use 'clear' after every command!]");
 			};
 		})();
+
+		if (document.cookie == 'theme=l') {
+			r.style.setProperty('--color', 'black');
+			r.style.setProperty('--background', 'white');
+			r.style.setProperty('--link-color', 'black');
+		}
 	},
 
 	checkArity: false,

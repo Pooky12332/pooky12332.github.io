@@ -6,3 +6,10 @@
 	--background: black;
 	--link-color: lightgray;
 }
+
+.terminal img {
+	max-width: 20%;
+	max-height: 20%;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}

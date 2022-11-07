@@ -17,7 +17,6 @@ Current known bugs:
 	<title>Pook.ie</title>
 	<link href="tabicon.png" rel="icon" type="image/png"></link>
 
-	<script></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/combine/npm/terminal-prism/css/prism-coy.css,npm/jquery.terminal/css/jquery.terminal.min.css,npm/jquery.splitter/css/jquery.splitter.css" rel="stylesheet">
@@ -36,31 +35,35 @@ Current known bugs:
  / ___/ _ \/ _ \/  '_/   / / -_)
 /_/   \___/\___/_/\_\(_)/_/\__/
 
-Ver 1.5a - 04/11/22
+Ver 1.6a - 07/11/22
 	</template>
 	<template id="helpDia">commands.Main:
 	info - A little about me
 	social - Links to all of my social stuff
 	credits - The libraries and sources I used for this site
-	argc - Change the argument indicator
+	charg - Change the argument indicator
 
 commands.Projects:
 	coding - View my coding work and projects
-	games - View games I have made/worked on
-	videos - View videos I have made/worked on
-	music - View music I have made/worked on
+	games - View games I've made/worked on
+	videos - View videos I've made/worked on
+	music - View music I've made/worked on
+	pictures - View pictures I've taken
 
-commands.Other:
-	fun - List of more fun commands and debug commands
+commands.System:
 	help - Displays this list of commands
 	clear - Clears all text off the screen
 	reboot - Reloads the terminal and page
 	exit - Close the terminal and page
 	date - Displays the time and date
+	echo - Prints text to the terminal
+
+commands.Other:
+	fun - List of more fun commands and debug commands
 	python - Opens a Python 3 interpreter and compiler
 	theme - Lets you change the theme of the terminal
-	txtcol - Change the colour of the terminal text
-	bkgcol - Change the colour of the terminal background
+	tcol - Change the text colour of the terminal
+	bcol - Change the background colour of the terminal
 	</template>
 	<template id="infoDia">My name is Ewan Clarke, also known as Pooky
 
@@ -78,6 +81,7 @@ Try running some and see what happens
 Run these as arguments, e.g 'fun --cat'
 
 commands.fun.Args:
+	-fb - Runs the fizz buzz program
 	--cat - A test image of a cat
 	--cat2 - Another test image of a cat
 	--colour - Run the coloured text test
@@ -88,6 +92,7 @@ commands.fun.Args:
 	<!--
 	This links the main.js script to the html file
 	All of the actual intresting code can be found there
+	Needs to be at end of the body for reasons unknown
 	-->
 	<script src="main.js"></script>
 

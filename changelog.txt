@@ -59,3 +59,12 @@ Ver 1.5a - 04/11/22
 	- Added 'date' to display the current date and time
 	- Added 'argc' to change the arg indicator from '-' to '+'
 	- Removed code from unused or removed commands
+
+Ver 1.6a - 07/11/22
+	- Added new commands section 'system' for better formatting
+	- Added cookies for theme (this is just a test, might be removed)
+	- Added media folder for storing media that will be used on the site
+	- Added 'pictures' to projects for displaying pictures
+	- Added 'echo' to print text to the terminal
+	- Added '-fb' to 'fun' that runs fizz bizz to 100
+	- Changed 'bkgcol' and 'txtcol' to 'bcol' and 'tcol'
