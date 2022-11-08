@@ -209,7 +209,7 @@ $('body').terminal({
 
 // Flags and initialization
 	onInit() {
-		const sequence = ['Hello, Welcome to my site!', 'My name is Ewan Clarke, I also go by Pooky', 'I like to make and code things', 'Type \'help\' for a list of all commands', 'Type \'info\' to learn more about me', ' '];
+		const sequence = ['Hello, Welcome to my site!', 'My name is Ewan Clarke, I also go by Pooky', 'Type \'help\' for a list of all commands', 'Type \'info\' to learn more about me', ' '];
 		const term = this;
 
 		const splashList = ['', 'It\'s the first of the month!', 'Follow the train, CJ!', 'Better then UNIX!', 'More addictive then Factorio!', 'More then 200 lines of code!', 'Stuck in alpha!', 'Keyboard compatible!', 'Now in 3D!', '20 GOTO 10', 'That last splash was basic!', 'Sublime!', 'As seen on tv!', 'Mobile is still broken!', 'Now your thinking with portals!', 'No stolen code here!', 'Rise and shine, Mister Freeman!', 'Contains cats!', 'Killing goombas since 1983!', 'Cookie free!', 'Waterproof!', 'One of a kind!', 'Now With Multiplayer!', 'Lookin\' out for you, like I always do!', 'Bulletproof!', 'One of your five a day!', '/give @a tnt 64', 'Now in colour!', 'Do a barrel roll!', '4 u, <3!', 'I\'m feeling lucky!', 'See you next month!'];
