@@ -14,7 +14,7 @@ Ver 1.2a - 01/11/22
 	- Fixed hyperlinks on mobile
 	- Added 'txtcol' to change the text colour
 	- Added 'bkgcol' to change the background colour
-	- Added 'reboot' to relaod the page
+	- Added 'reboot' to reload the page
 	- Added 'colour' argument to 'fun'
 	- Added 'embedvid' argument to 'fun'
 
@@ -68,3 +68,17 @@ Ver 1.6a - 07/11/22
 	- Added 'echo' to print text to the terminal
 	- Added '-fb' to 'fun' that runs fizz bizz to 100
 	- Changed 'bkgcol' and 'txtcol' to 'bcol' and 'tcol'
+
+Ver 1.7 - 08/11/22
+	- Site is now fully released!
+	- Fixed bug with 'tcol' and 'bcol' that caused them to clear all colours
+	- Added new command section 'apps' for containing all apps
+	- Added cookies to 'carg' (test run)
+	- Added apps folder for apps that I make in the future
+	- Added 'clog' to main commands, it displays the change log in the terminal
+	- Moved 'tcol' and 'bcol' to fun
+	- Moved 'python' and 'fun' to app commands
+	- Moved 'carg' to system commands
+	- Moved 'theme' to system commands
+	- Removed '--animtest' from 'fun'
+	- Changed 'argc' to 'carg' to fit 'clog'

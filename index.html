@@ -35,13 +35,13 @@ Current known bugs:
  / ___/ _ \/ _ \/  '_/   / / -_)
 /_/   \___/\___/_/\_\(_)/_/\__/
 
-Ver 1.6a - 07/11/22
+Ver 1.7 - 08/11/22
 	</template>
 	<template id="helpDia">commands.Main:
 	info - A little about me
 	social - Links to all of my social stuff
 	credits - The libraries and sources I used for this site
-	charg - Change the argument indicator
+	clog - Displays the change log
 
 commands.Projects:
 	coding - View my coding work and projects
@@ -55,15 +55,14 @@ commands.System:
 	clear - Clears all text off the screen
 	reboot - Reloads the terminal and page
 	exit - Close the terminal and page
+	carg - Change the argument indicator
 	date - Displays the time and date
 	echo - Prints text to the terminal
+	theme - Lets you change the theme of the terminal
 
-commands.Other:
+commands.Apps:
 	fun - List of more fun commands and debug commands
 	python - Opens a Python 3 interpreter and compiler
-	theme - Lets you change the theme of the terminal
-	tcol - Change the text colour of the terminal
-	bcol - Change the background colour of the terminal
 	</template>
 	<template id="infoDia">My name is Ewan Clarke, also known as Pooky
 
@@ -84,9 +83,94 @@ commands.fun.Args:
 	-fb - Runs the fizz buzz program
 	--cat - A test image of a cat
 	--cat2 - Another test image of a cat
+	--tcol - Change the colour of the text
+	--bcol - Change the colour of the background
 	--colour - Run the coloured text test
 	--embedvid - Runs the embed video test
-	--animtest - Runs the animation test
+	</template>
+	<template id="clogDia">Ver 1.1a - 01/11/22
+	- Fixed mobile view
+	- Fixed size of text on both platforms
+	- Fixed dialog issues
+	- Edited some dialog
+	- Moved the JS code to a different file
+	- Moved the CSS code to a different file
+	- Added Python IDE
+	- Added music embed
+	- Removed 'writing' command
+
+Ver 1.2a - 01/11/22
+	- Fixed greeting message formatting
+	- Fixed hyperlinks on mobile
+	- Added 'txtcol' to change the text colour
+	- Added 'bkgcol' to change the background colour
+	- Added 'reboot' to reload the page
+	- Added 'colour' argument to 'fun'
+	- Added 'embedvid' argument to 'fun'
+
+Ver 1.3a - 02/11/22
+	- Fixed dialog issues
+	- Edited the greeting text to include a warning for mobile users
+	- Edited some comments for easier reading
+	- Edited the dialog of 'credits'
+	- Added 'theme' command for changing to select themes
+	- Added 'exit' to close the page
+	- Added 'changelog.txt' to view version list easier
+	- Added tabicon
+	- Added '--animtest' argument to 'fun'
+	- Added '-p' argument to 'fun'
+	- Added comments to 'main.js' for easier reading
+	- Changed the title of the tab from 'Pooky' to 'Pook.ie'
+	- Changed the '--nicew' argument for 'fun' to '--nw'
+	- Changed the order of commands in code for better reading
+
+Ver 1.4a - 03/11/22
+	- Fixed formating issues
+	- Fixed dating issues
+	- Edited greeting and warning text
+	- Added animated intro to site when loaded
+	- Added first round of daily splashes
+	- Added link colour changing to '-l' and '-d' in 'theme'
+	- Added '--cat2' argument to 'fun'
+	- Added comments to 'main.js' for easier reading
+	- Removed '--nw' argument from 'fun'
+	- Removed '-p' argument from 'fun'
+	- Moved 'fun' from main to other in help section but not in the code
+	- Changed arguments for 'theme', 'txtcol' and 'bkgcol' to shortened versions
+	- Changed the colour of links to fit the colour scheme
+
+Ver 1.5a - 04/11/22
+	- Fixed formating issues
+	- Fixed intro text animation on mobile
+	- Edited some digalogs to include new commands
+	- Edited warning colour and text
+	- Edited all commands to accept '+' or '++' once changed
+	- Added new line to intro
+	- Added 'date' to display the current date and time
+	- Added 'argc' to change the arg indicator from '-' to '+'
+	- Removed code from unused or removed commands
+
+Ver 1.6a - 07/11/22
+	- Added new commands section 'system' for better formatting
+	- Added cookies for theme (this is just a test, might be removed)
+	- Added media folder for storing media that will be used on the site
+	- Added 'pictures' to projects for displaying pictures
+	- Added 'echo' to print text to the terminal
+	- Added '-fb' to 'fun' that runs fizz bizz to 100
+	- Changed 'bkgcol' and 'txtcol' to 'bcol' and 'tcol'
+
+Ver 1.7 - 08/11/22
+	- Site is now fully released!
+	- Fixed bug with 'tcol' and 'bcol' that caused them to clear all colours
+	- Added new command section 'apps' for containing all apps
+	- Added cookies to 'argc' (test run)
+	- Added apps folder for apps that I make in the future
+	- Added 'chlog' to main commands, it displays the change log in the terminal
+	- Moved 'tcol' and 'bcol' to fun
+	- Moved 'python' and 'fun' to app commands
+	- Moved 'argc' to system commands
+	- Moved 'theme' to system commands
+	- Removed '--animtest' from 'fun'
 	</template>
 
 	<!--
