@@ -23,7 +23,9 @@ $('body').terminal({
 	credits: function(){
 		this.echo('Primary library I used to make this site:');
 		this.echo('[[!;;;;https://github.com/jcubic/jquery.terminal]https://github.com/jcubic/jquery.terminal]');
-		this.echo('The site I used for the cat picture:')
+		this.echo('Cookie handling library I used:');
+		this.echo('[[!;;;;https://github.com/js-cookie/js-cookie]https://github.com/js-cookie/js-cookie]');
+		this.echo('The site I used for the cat picture:');
 		this.echo('[[!;;;;https://placekitten.com/]https://placekitten.com/]\n');
 	},
 	clog: function(){
@@ -67,11 +69,12 @@ $('body').terminal({
 		if (argIndi == '-') {
 			argIndi = '+';
 			argIndiLong = '++';
-			document.cookie = 'ind=+'
+			Cookies.set('indi', '+') 
 			this.echo('Argument Indicator is now set to \'+\'\n');
 		} else {
 			argIndi = '-';
 			argIndiLong = '--';
+			Cookies.remove('indi')
 			this.echo('Argument Indicator is now set to \'-\'\n');
 		}
 	},
@@ -91,14 +94,14 @@ $('body').terminal({
 					r.style.setProperty('--color', 'black');
 					r.style.setProperty('--background', 'white');
 					r.style.setProperty('--link-color', 'black');
-					document.cookie = 'theme=l';
+					Cookies.set('theme', 'l');
 					this.echo('Theme changed to: light\n');
 					break;
 				case argIndi + 'd':
 					r.style.setProperty('--color', 'lightgray');
 					r.style.setProperty('--background', 'black');
 					r.style.setProperty('--link-color', 'lightgray');
-					document.cookie = 'theme=';
+					Cookies.remove('theme');
 					this.echo('Theme changed to: dark\n');
 					break;
 				default:
@@ -230,12 +233,12 @@ $('body').terminal({
 			};
 		})();
 
-		if (document.cookie == 'theme=l') {
+		if (Cookies.get('theme') == 'l') {
 			r.style.setProperty('--color', 'black');
 			r.style.setProperty('--background', 'white');
 			r.style.setProperty('--link-color', 'black');
 		};
-		if (document.cookie == 'ind=+') {
+		if (Cookies.get('indi') == '+') {
 			argIndi = '+';
 			argIndiLong = '++';
 		};

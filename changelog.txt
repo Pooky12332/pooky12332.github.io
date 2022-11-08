@@ -82,3 +82,8 @@ Ver 1.7 - 08/11/22
 	- Moved 'theme' to system commands
 	- Removed '--animtest' from 'fun'
 	- Changed 'argc' to 'carg' to fit 'clog'
+
+Ver 1.7.1 - 08/11/22
+	- Edited some text for the error and intro
+	- Added packages folder for packages
+	- Added 'js-cookie' to change how cookies work, also added to credits
