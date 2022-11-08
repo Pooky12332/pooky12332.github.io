@@ -226,7 +226,7 @@ $('body').terminal({
 			} else {
 				term.resume();
 				term.echo('\n' + splashList[date.getDate()])
-				term.echo("\n[[i;#ff0000;]This site is still in alpha and has some bugs!]\n[[i;#ff0000;]If your on mobile, Type 'argc' to use args,]\n[[i;#ff0000;]and please use 'clear' after every command!]");
+				term.echo("\n[[i;#ff0000;]If your on mobile, Type 'argc' to use args!]");
 			};
 		})();
 
