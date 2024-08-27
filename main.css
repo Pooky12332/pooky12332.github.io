@@ -1,0 +1,45 @@
+* {
+	font-family: consolas;
+	color: white;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+h3 {
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 1%;
+}
+
+p {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#map {
+	height: 75vh;
+}
+
+#menu {
+	height: 25vh;
+	width: 100%;
+	background-color: black;
+	position: fixed;
+}
+
+#username {
+	float: left;
+}
+
+#timestamp {
+	float: right;
+}
+
+#comment {
+	overflow: hidden;
+	display: inline-block;
+}
