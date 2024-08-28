@@ -6,4 +6,5 @@ API List
 	- First version for public use
 
 28/8/24 - d1.0-1:
-	- Fixed a bug for tool bars being in the way on IOS
+	- Made it so every user can only have 1 post per time
+	- Added warning for IOS user to hide the tool bar

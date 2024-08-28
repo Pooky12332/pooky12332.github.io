@@ -19,11 +19,12 @@
   $postLat = $_POST['postLat'];
   $postLng = $_POST['postLng'];
 
-  // Creating the SQL query
+  // Creating the SQL querys
+  $del = 'DELETE FROM posts WHERE username="' . $postName . '"';
   $sql = 'INSERT INTO posts (username, timePosted, comment, trackId, lat, lng) VALUES ("' . $postName . '", "'. $postTime . '", "' . $postComment . '", "' . $postId . '", ' . $postLat . ', ' . $postLng . ')';
 
   // Posting the query to the server and returning errors if nessary
-  if ($conn -> query($sql) === TRUE) {
+  if ($conn -> query($del) === TRUE && $conn -> query($sql) === TRUE) {
   	echo "Posted to the server!";
   } else {
   	echo "Error: " . $sql . " - " . $conn -> error;
