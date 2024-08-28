@@ -2,10 +2,8 @@ API List
 	- Leaflet - https://leafletjs.com/reference.html#icon
 	- Spotify - https://developer.spotify.com/documentation/web-api
 
-24/8/24 - d0.1
-	- Added map and location control
-	- Added some example markers and the base code for them
+28/8/24 - d1.0:
+	- First version for public use
 
-27/8/24 - d0.1
-	- Made markers clickable
-	- Added the starting code for the menu
+28/8/24 - d1.0-1:
+	- Fixed a bug for tool bars being in the way on IOS

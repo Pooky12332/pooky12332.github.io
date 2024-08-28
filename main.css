@@ -3,6 +3,12 @@
 	src: url(Consolas.ttf);
 }
 
+@supports (height: 100dvh) {
+  body {
+    height: 100dvh;
+  }
+}
+
 * {
 	font-family: newConsolas;
 	color: white;
@@ -11,6 +17,7 @@
 
 body {
 	overflow: hidden;
+	height: 100vh;
 }
 
 h3 {
