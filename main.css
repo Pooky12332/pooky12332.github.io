@@ -1,5 +1,10 @@
+@font-face {
+	font-family: newConsolas;
+	src: url(Consolas.ttf);
+}
+
 * {
-	font-family: consolas;
+	font-family: newConsolas;
 	color: white;
 	margin: 0;
 }
@@ -16,6 +21,7 @@ h3 {
 }
 
 p {
+	float: left;
 	padding-left: 2%;
 	padding-right: 2%;
 }
@@ -42,4 +48,65 @@ p {
 #comment {
 	overflow: hidden;
 	display: inline-block;
+}
+
+#postComment {
+	background-color: black;
+	width: 100%;
+	height: 40%;
+	border-left: 0;
+	border-right: 0;
+}
+
+#postLink {
+	background-color: black;
+	width: 100%;
+	border-color: rgb(118, 118, 118);
+	border-width: 1px;
+	border-left: 0;
+	border-right: 0;
+	border-style: solid;
+	margin-top: 14px;
+}
+
+#postButton {
+	background-color: black;
+ 	display: grid;
+ 	margin: auto;
+ 	margin-top: 20px;
+ 	border-style: solid;
+ 	border-color: rgb(118, 118, 118);
+	border-width: 1px;
+}
+
+#settingsSection {
+	text-align: center;
+	padding-top: 14px;
+}
+
+#settingConfirmation {
+	text-align: center;
+	padding-top: 14px;
+}
+
+#settingsUsername {
+	background-color: black;
+	border-color: rgb(118, 118, 118);
+	border-width: 1px;
+	border-style: solid;
+}
+
+#settingsSave {
+	background-color: black;
+ 	border-style: solid;
+ 	border-color: rgb(118, 118, 118);
+	border-width: 1px;
+}
+
+.leaflet-bar a {
+	background-color: black;
+}
+
+.leaflet-bar a:hover, .leaflet-bar a:focus {
+	background-color: black;
 }
